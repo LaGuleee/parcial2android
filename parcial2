@@ -1,0 +1,65 @@
+package com.example.myapplication;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Activity1 extends Main {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        final Button button = (android.widget.Button) findViewById(R.id.resul2);
+        button.setOnClickListener(new View.OnClickListener() {
+
+        });
+
+    }
+}
+
+public class MainActivity extends AppCompatActivity {
+    private EditText n1;
+    private EditText n2;
+    public int resultado;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        this.n1 = findViewById(R.id.n1);
+        this.n1 = findViewById(R.id.n2);
+        this.resultado = findViewById(R.id.resul2);
+
+    }
+    private double operacion(){
+        EditText ingreso = (EditText) findViewById(R.id.editTextNumberDecimal);
+
+        try{
+            float costo = Float.parseFloat(ingreso.getText().toString());
+            double iva = costo * (0.16);
+            double preciototal = costo+iva;
+
+            TextView ivaview =(TextView) findViewById(R.id.textView8);
+            ivaview.setText("el iva del producto es : "+ iva );
+
+            TextView precioview=(TextView) findViewById(R.id.textView8);
+            precioview.setText("el precio del producto es "+ preciototal);
+        } catch(Exception e){
+            TextView ivaview =(TextView) findViewById(R.id.textView8;
+            ivaview.setText("    ");
+
+            TextView precioview=(TextView) findViewById(R.id.textView8);
+            precioview.setText("ingrese solo numeros     ");
+        }
+        public void onClick(resultado)
+        if (resultado.getId() == R.id.resul2) {
+            resultado.setText(" "+getText());
+    }
+        public double total {
+            resultado = 0;
+            double resultado = Double.parseDouble(this.n1.getText().toString().trim()) + Double.parseDouble(this.n2.getText().toString().trim());
+            return resultado;
+        }
